@@ -1,4 +1,4 @@
-import {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto} from "./totalizador";
+import {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto, calcularDescuento} from "./totalizador";
 
 const cantItems = document.querySelector("#cantidad-items");
 const precio = document.querySelector("#precio");
@@ -15,6 +15,7 @@ form.addEventListener("submit", (event) => {
   const estadoValue = estado.value;
 
   div.innerHTML = ("<p>" + "Precio neto (" + cantItemsNumber + "*$" + precioNumber + "): $" + precioNeto(cantItemsNumber, precioNumber) + "</p>" +
+  "<p>" + "Descuento ( %): " + "</p>" +
   "<p>"+ "Impuesto para " + estadoValue + "(%" + porcentajeImpuesto(estadoValue) * 100 + "): $" + calcularImpuesto(precioNeto(cantItemsNumber, precioNumber), estadoValue) + "</p>"+
   "<p>" + "Precio Total: " + calcularTotal(precioNeto(cantItemsNumber, precioNumber), estadoValue) + "</p>" 
   );
