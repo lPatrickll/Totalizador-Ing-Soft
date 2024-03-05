@@ -2,23 +2,27 @@ function precioNeto(cantItems, precio){
     return cantItems * precio;
 }
 
-function calcularImpuesto(neto, estado){
-    let impuesto;
+function porcentajeImpuesto(estado){
+    let porcentaje;
     if (estado == "CA")
-        impuesto = neto * 0.0825;
+        porcentaje = 0.0825;
     if (estado == "AL")
-        impuesto = neto * 0.04;
+        porcentaje = 0.04;
     if (estado == "TX")
-        impuesto = neto * 0.0625;
+        porcentaje = 0.0625;
     if (estado == "NV")
-        impuesto = neto * 0.08;
+        porcentaje = 0.08;
     if (estado == "UT")
-        impuesto = neto * 0.0665;
-    return impuesto;
+        porcentaje = 0.0665;
+    return porcentaje;
+}
+
+function calcularImpuesto(neto, estado){
+    return neto * porcentajeImpuesto(estado);
 }
 
 function calcularTotal(neto, estado){
     return neto + calcularImpuesto(neto, estado);
 }
 
-export {precioNeto, calcularTotal};
+export {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto};
