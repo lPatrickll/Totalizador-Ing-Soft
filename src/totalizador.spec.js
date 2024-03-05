@@ -1,4 +1,4 @@
-import {precioNeto, calcularTotal} from "./totalizador";
+import {precioNeto, calcularTotal, calcularDescuento} from "./totalizador";
 
 describe("Totalizador", () => {
     it("deberia calcular precio neto de 3 items a precio de 2 = 6", () => {
@@ -43,8 +43,9 @@ describe("Totalizador", () => {
         let neto = precioNeto(1000, 5);
         expect(calcularDescuento(neto, 1000)).toEqual(150);
     });
-});
 
-function calcularDescuento(neto, cantidad){
-    return neto * 0.03;
-}
+    it("deberia hacer un descuento al precio neto de acuerdo a la cantidad > 3000", () => {
+        let neto = precioNeto(3000, 5);
+        expect(calcularDescuento(neto, 3000)).toEqual(750);
+    });
+});
