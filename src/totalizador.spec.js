@@ -1,4 +1,4 @@
-import precioNeto from "./totalizador";
+import {precioNeto, calcularTotal} from "./totalizador";
 
 describe("Totalizador", () => {
     it("deberia calcular precio neto de 3 items a precio de 2 = 6", () => {
@@ -15,7 +15,3 @@ describe("Totalizador", () => {
         expect(calcularTotal(neto, estado)).toEqual(108.25);
     })
 });
-
-function calcularTotal(neto, estado){
-    return neto + (neto * 0.0825);
-}

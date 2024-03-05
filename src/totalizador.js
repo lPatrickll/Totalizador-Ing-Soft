@@ -1,6 +1,9 @@
-
 function precioNeto(cantItems, precio){
     return cantItems * precio;
 }
 
-export default precioNeto;
+function calcularTotal(neto, estado){
+    return neto + (neto * 0.0825);
+}
+
+export {precioNeto, calcularTotal};
