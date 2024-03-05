@@ -6,8 +6,10 @@ function calcularTotal(neto, estado){
     let res; 
     if (estado == "CA")
         res = neto + (neto * 0.0825);
-    else
+    if (estado == "AL")
         res = neto + (neto * 0.04);
+    if (estado == "TX")
+        res = neto + (neto * 0.0625);
     return res;
 }
 
