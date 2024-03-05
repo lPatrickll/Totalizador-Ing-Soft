@@ -38,4 +38,13 @@ describe("Totalizador", () => {
         let neto = precioNeto(20, 5);
         expect(calcularTotal(neto, estado)).toEqual(106.65);
     });
+    
+    it("deberia hacer un descuento al precio neto de acuerdo a la cantidad", () => {
+        let neto = precioNeto(1000, 5);
+        expect(calcularDescuento(neto, 1000)).toEqual(150);
+    });
 });
+
+function calcularDescuento(neto, cantidad){
+    return neto * 0.03;
+}
