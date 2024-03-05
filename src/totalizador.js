@@ -27,6 +27,8 @@ function calcularDescuento(neto, cantidad){
         descuento = (neto * 7) / 100;
     if (cantidad >= 10000 && cantidad <=29999)
         descuento = (neto * 10) / 100;
+    if (cantidad >= 30000)
+        descuento = (neto * 15) / 100;
     return descuento;
 }
 
