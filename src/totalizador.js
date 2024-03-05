@@ -18,11 +18,13 @@ function porcentajeImpuesto(estado){
 }
 
 function calcularDescuento(neto, cantidad){
-    let descuento;
-    if (cantidad >= 1000)
-        descuento = neto * 0.03;
-    if (cantidad >= 3000)
-        descuento = neto * 0.05;
+    let descuento = 0;
+    if (cantidad >= 1000 && cantidad <=2999)
+        descuento = (neto * 3) / 100;
+    if (cantidad >= 3000 && cantidad <=6999)
+        descuento = (neto * 5) / 100;
+    if (cantidad >= 7000 && cantidad <=9999)
+        descuento = (neto * 7) / 100;
     return descuento;
 }
 
