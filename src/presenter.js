@@ -15,7 +15,7 @@ form.addEventListener("submit", (event) => {
   const estadoValue = estado.value;
 
   div.innerHTML = ("<p>" + "Precio neto (" + cantItemsNumber + "*$" + precioNumber + "): $" + precioNeto(cantItemsNumber, precioNumber) + "</p>" +
-  "<p>"+ "Impuesto para " + estadoValue + "(%" + 8.25 + "): $" + "</p>"+
+  "<p>"+ "Impuesto para " + estadoValue + "(%" + "): $" + "</p>"+
   "<p>" + "Precio Total: " + calcularTotal(precioNeto(cantItemsNumber, precioNumber), estadoValue) + "</p>" 
   );
 
