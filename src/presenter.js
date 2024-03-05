@@ -11,5 +11,5 @@ form.addEventListener("submit", (event) => {
   const cantItemsNumber = Number.parseInt(cantItems.value);
   const precioNumber = Number.parseInt(precio.value);
 
-  div.innerHTML = "<p>" + precioNeto(cantItemsNumber, precioNumber) + "</p>";
+  div.innerHTML = "<p>" + "Precio neto (" + cantItemsNumber + "*$" + precioNumber + "): $" + precioNeto(cantItemsNumber, precioNumber) + "</p>";
 });
