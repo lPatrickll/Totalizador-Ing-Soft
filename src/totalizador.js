@@ -17,19 +17,23 @@ function porcentajeImpuesto(estado){
     return porcentaje;
 }
 
-function calcularDescuento(neto, cantidad){
-    let descuento = 0;
+function porcentajeDecuento(cantidad){
+    let porcentaje;
     if (cantidad >= 1000 && cantidad <=2999)
-        descuento = (neto * 3) / 100;
+        porcentaje = 3;
     if (cantidad >= 3000 && cantidad <=6999)
-        descuento = (neto * 5) / 100;
+        porcentaje = 5;
     if (cantidad >= 7000 && cantidad <=9999)
-        descuento = (neto * 7) / 100;
+        porcentaje = 7;
     if (cantidad >= 10000 && cantidad <=29999)
-        descuento = (neto * 10) / 100;
+        porcentaje = 10;
     if (cantidad >= 30000)
-        descuento = (neto * 15) / 100;
-    return descuento;
+        porcentaje = 15;
+    return porcentaje;
+}
+
+function calcularDescuento(neto, cantidad){
+    return (neto * porcentajeDecuento(cantidad)) / 100;
 }
 
 function calcularImpuesto(neto, estado){
@@ -40,4 +44,4 @@ function calcularTotal(neto, estado){
     return neto + calcularImpuesto(neto, estado);
 }
 
-export {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto, calcularDescuento};
+export {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto, calcularDescuento, porcentajeDecuento};
