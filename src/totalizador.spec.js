@@ -53,4 +53,9 @@ describe("Totalizador", () => {
         let neto = precioNeto(7000, 5);
         expect(calcularDescuento(neto,7000)).toEqual(2450);
     });
+
+    it("deberia hacer un descuento al precio neto de acuerdo a la cantidad > 10000", () => {
+        let neto = precioNeto(10000, 2);
+        expect(calcularDescuento(neto,10000)).toEqual(2000);
+    });
 });
