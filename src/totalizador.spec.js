@@ -26,4 +26,10 @@ describe("Totalizador", () => {
         let neto = precioNeto(20, 5);
         expect(calcularTotal(neto, estado)).toEqual(106.25);
     });
+
+    it("deberia calcular el precio total con el estado NV", () => {
+        let estado = "NV";
+        let neto = precioNeto(20, 5);
+        expect(calcularTotal(neto, estado)).toEqual(108);
+    });
 });

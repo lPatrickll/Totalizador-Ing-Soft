@@ -10,6 +10,8 @@ function calcularTotal(neto, estado){
         res = neto + (neto * 0.04);
     if (estado == "TX")
         res = neto + (neto * 0.0625);
+    if (estado == "NV")
+        res = neto + (neto * 0.08);
     return res;
 }
 
