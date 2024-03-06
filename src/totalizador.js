@@ -33,7 +33,9 @@ function porcentajeDecuento(cantidad){
 }
 
 function categoriaImpuesto(neto, categoria){
-    return neto * 0;
+    if (categoria === "bebidas")
+        return (neto * 7) / 100;
+    return 0;
 }
 
 function calcularDescuento(neto, cantidad){

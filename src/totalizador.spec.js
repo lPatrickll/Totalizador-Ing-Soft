@@ -85,4 +85,9 @@ describe("Totalizador", () => {
         let neto = precioNeto(1000, 2);
         expect(categoriaImpuesto(neto, "alimentos")).toEqual(0);
     });
+
+    it("Impuesto de acuerdo a la categoria bebidas alcoholicas + 7%", () => {
+        let neto = precioNeto(1000, 2);
+        expect(categoriaImpuesto(neto, "bebidas")).toEqual(140);
+    });
 });
