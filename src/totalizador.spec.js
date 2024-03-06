@@ -168,4 +168,10 @@ describe("Totalizador", () => {
         let peso = 4;
         expect(calcularPeso(cantidad, peso)).toEqual(0);
     });
+
+    it("Peso volumetrico de acuerdo al costo de 11 a 20", () => {
+        let cantidad = 1000;
+        let peso = 15;
+        expect(calcularPeso(cantidad, peso)).toEqual(3500);
+    });
 });

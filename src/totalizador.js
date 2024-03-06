@@ -57,6 +57,8 @@ function porcentajeCategoriaDescuento(categoria){
 }
 
 function calcularPeso(cantidad, peso){
+    if (peso >= 11)
+        return cantidad * 3.5;
     return 0;
 }
 
