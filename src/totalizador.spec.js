@@ -247,4 +247,15 @@ describe("Totalizador", () => {
         let neto = precioNeto(cantidad, 10);
         expect(calcularOtrosBeneficios("normal", neto, "vestimenta")).toEqual(0);
     });
+
+    // Total completo
+    it("Mostrar total con peso, tipo de cliente y descuentos especiales", () => {
+        let categoria = "electronicos";
+        let precio = 2;
+        let cantidad = 4000;
+        let estado = "CA";
+        let cliente = "especial";
+        let peso = 15;
+        expect(calcularTotal(cantidad, precio, estado, categoria, cliente, peso)).toEqual(22180);
+    });
 });
