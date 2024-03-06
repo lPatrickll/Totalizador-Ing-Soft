@@ -241,4 +241,10 @@ describe("Totalizador", () => {
         let neto = precioNeto(cantidad, 10);
         expect(calcularOtrosBeneficios("especial", neto, "electronicos")).toEqual(200);
     });
+
+    it("Descuento de precio fijo de acuerdo a al cliente Normal, precio neto mayor 7000 y categoria de vestimenta", () => {
+        let cantidad = 1000;
+        let neto = precioNeto(cantidad, 10);
+        expect(calcularOtrosBeneficios("normal", neto, "vestimenta")).toEqual(0);
+    });
 });
