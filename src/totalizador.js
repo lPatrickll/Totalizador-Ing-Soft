@@ -32,16 +32,21 @@ function porcentajeDecuento(cantidad){
     return porcentaje;
 }
 
-function categoriaImpuesto(neto, categoria){
+function porcentajeCategoriaImpuesto(categoria){
+    let porcentaje = 0;
     if (categoria === "bebidas")
-        return (neto * 7) / 100;
+        porcentaje = 7;
     if (categoria === "muebles")
-        return (neto * 3) / 100;
+        porcentaje = 3;
     if (categoria === "electronicos")
-        return (neto * 4) / 100;
+        porcentaje = 4;
     if (categoria === "vestimenta")
-        return (neto * 2) / 100;
-    return 0;
+        porcentaje = 2;
+    return porcentaje;
+}
+
+function categoriaImpuesto(neto, categoria){
+    return (neto * porcentajeCategoriaImpuesto(categoria)) / 100;
 }
 
 function calcularDescuento(neto, cantidad){
