@@ -51,6 +51,8 @@ function porcentajeCategoriaDescuento(categoria){
         porcentaje = 2;
     if (categoria === "material")
         porcentaje = 1.5;
+    if (categoria === "electronicos")
+        porcentaje = 1;
     return porcentaje;
 }
 

@@ -136,4 +136,9 @@ describe("Totalizador", () => {
         let neto = precioNeto(1000, 2);
         expect(categoriaDescuento(neto, "muebles")).toEqual(0);
     });
+
+    it("Descuento de acuerdo a la categoria electronicos + 1%", () => {
+        let neto = precioNeto(1000, 2);
+        expect(categoriaDescuento(neto, "electronicos")).toEqual(20);
+    });
 });
