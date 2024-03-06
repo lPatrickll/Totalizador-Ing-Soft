@@ -65,6 +65,8 @@ function calcularPeso(cantidad, peso){
         return cantidad * 6;
     if (peso >= 81 && peso <= 100)
         return cantidad * 6.5;
+    if (peso >= 101 && peso <= 200)
+        return cantidad * 8;
     return 0;
 }
 
