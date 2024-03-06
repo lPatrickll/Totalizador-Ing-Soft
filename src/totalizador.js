@@ -56,20 +56,25 @@ function porcentajeCategoriaDescuento(categoria){
     return porcentaje;
 }
 
-function calcularPeso(cantidad, peso){
+function costoEnvio(peso){
+    let costo = 0;
     if (peso >= 11 && peso <= 20)
-        return cantidad * 3.5;
+        costo = 3.5;
     if (peso >= 21 && peso <= 40)
-        return cantidad * 5;
+        costo = 5;
     if (peso >= 41 && peso <= 80)
-        return cantidad * 6;
+        costo = 6;
     if (peso >= 81 && peso <= 100)
-        return cantidad * 6.5;
+        costo = 6.5;
     if (peso >= 101 && peso <= 200)
-        return cantidad * 8;
+        costo = 8;
     if (peso >= 201)
-        return cantidad * 9;
-    return 0;
+        costo = 9;
+    return costo;
+}
+
+function calcularPeso(cantidad, peso){
+    return cantidad * costoEnvio(peso);
 }
 
 function categoriaImpuesto(neto, categoria){
