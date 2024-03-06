@@ -75,7 +75,8 @@ describe("Totalizador", () => {
         let precio = 5;
         expect(calcularTotal(cantidad, precio, estado)).toEqual(35437.5);
     });
-
+    //Funcionalidades Adicionales
+    //Impuestos
     it("Aumenta el precio de acuerdo a la categoria varios + 0%", () => {
         let neto = precioNeto(1000, 2);
         expect(categoriaImpuesto(neto, "varios")).toEqual(0);
@@ -110,4 +111,13 @@ describe("Totalizador", () => {
         let neto = precioNeto(1000, 2);
         expect(categoriaImpuesto(neto, "vestimenta")).toEqual(40);
     });
+    //Descuentos por Categoria
+    it("Descuento de acuerdo a la categoria varios + 0%", () => {
+        let neto = precioNeto(1000, 2);
+        expect(categoriaDescuento(neto, "varios")).toEqual(0);
+    });
 });
+
+function categoriaDescuento(neto,categoria){
+    return neto * 0;
+}
