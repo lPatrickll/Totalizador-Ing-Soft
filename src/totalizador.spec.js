@@ -216,4 +216,10 @@ describe("Totalizador", () => {
         let neto = precioNeto(cantidad, 10);
         expect(calcularDescuentoTipoCliente(neto, "recurrente")).toEqual(50);
     });
+
+    it("Descuento de Costo de envio por cliente Antiguo Recurrente", () => {
+        let cantidad = 1000;
+        let neto = precioNeto(cantidad, 10);
+        expect(calcularDescuentoTipoCliente(neto, "antiguo")).toEqual(100);
+    });
 });
