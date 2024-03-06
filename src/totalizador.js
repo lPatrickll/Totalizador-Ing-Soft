@@ -72,9 +72,9 @@ function calcularImpuesto(neto, estado){
     return neto * porcentajeImpuesto(estado);
 }
 
-function calcularTotal(cantidad, precio, estado){
+function calcularTotal(cantidad, precio, estado, categoria){
     let neto = precioNeto(cantidad, precio);
-    return neto + calcularImpuesto(neto, estado) - calcularDescuento(neto, cantidad);
+    return neto + calcularImpuesto(neto, estado) - calcularDescuento(neto, cantidad) + categoriaImpuesto(neto, categoria) - categoriaDescuento(neto, categoria);
 }
 
 export {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto, calcularDescuento, porcentajeDecuento, categoriaImpuesto, porcentajeCategoriaImpuesto, categoriaDescuento, porcentajeCategoriaDescuento};

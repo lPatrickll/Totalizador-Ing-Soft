@@ -146,4 +146,20 @@ describe("Totalizador", () => {
         let neto = precioNeto(1000, 2);
         expect(categoriaDescuento(neto, "vestimenta")).toEqual(0);
     });
+
+    it("Mostrar total con categoria", () => {
+        let categoria = "varios";
+        let precio = 2;
+        let cantidad = 1000;
+        let estado = "CA";
+        expect(calcularTotal(cantidad, precio, estado, categoria)).toEqual(2105);
+    });
+
+    it("Mostrar total con categoria = electronicos", () => {
+        let categoria = "electronicos";
+        let precio = 2;
+        let cantidad = 1000;
+        let estado = "CA";
+        expect(calcularTotal(cantidad, precio, estado, categoria)).toEqual(2165);
+    });
 });

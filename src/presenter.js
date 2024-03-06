@@ -21,7 +21,7 @@ form.addEventListener("submit", (event) => {
   "<p>"+ "Impuesto para " + estadoValue + "(%" + porcentajeImpuesto(estadoValue) * 100 + "): $" + calcularImpuesto(precioNeto(cantItemsNumber, precioNumber), estadoValue) + "</p>"+
   "<p> Impuestos por categoria (" + porcentajeCategoriaImpuesto(categoriaValue) + "%): " + categoriaImpuesto(precioNeto(cantItemsNumber, precioNumber), categoriaValue) + "</p>" +
   "<p> Descuentos por categoria (" + porcentajeCategoriaDescuento(categoriaValue) + "%): " + categoriaDescuento(precioNeto(cantItemsNumber, precioNumber), categoriaValue) + "</p>" +
-  "<p>" + "Precio Total: " + calcularTotal(cantItemsNumber, precioNumber, estadoValue) + "</p>" 
+  "<p>" + "Precio Total: " + calcularTotal(cantItemsNumber, precioNumber, estadoValue, categoriaValue) + "</p>" 
   );
 
 });
