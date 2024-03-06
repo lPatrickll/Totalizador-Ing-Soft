@@ -11,32 +11,37 @@ describe("Totalizador", () => {
 
     it("deberia calcular el precio total con el estado CA", () => {
         let estado = "CA";
-        let neto = precioNeto(20, 5);
-        expect(calcularTotal(neto, estado)).toEqual(108.25);
+        let cantidad = 20;
+        let precio = 5;
+        expect(calcularTotal(cantidad, precio, estado)).toEqual(108.25);
     });
 
     it("deberia calcular el precio total con el estado AL", () => {
         let estado = "AL";
-        let neto = precioNeto(20, 5);
-        expect(calcularTotal(neto, estado)).toEqual(104);
+        let cantidad = 20;
+        let precio = 5;
+        expect(calcularTotal(cantidad, precio, estado)).toEqual(104);
     });
 
     it("deberia calcular el precio total con el estado TX", () => {
         let estado = "TX";
-        let neto = precioNeto(20, 5);
-        expect(calcularTotal(neto, estado)).toEqual(106.25);
+        let cantidad = 20;
+        let precio = 5;
+        expect(calcularTotal(cantidad, precio, estado)).toEqual(106.25);
     });
 
     it("deberia calcular el precio total con el estado NV", () => {
         let estado = "NV";
-        let neto = precioNeto(20, 5);
-        expect(calcularTotal(neto, estado)).toEqual(108);
+        let cantidad = 20;
+        let precio = 5;
+        expect(calcularTotal(cantidad, precio, estado)).toEqual(108);
     });
 
     it("deberia calcular el precio total con el estado UT", () => {
         let estado = "UT";
-        let neto = precioNeto(20, 5);
-        expect(calcularTotal(neto, estado)).toEqual(106.65);
+        let cantidad = 20;
+        let precio = 5;
+        expect(calcularTotal(cantidad, precio, estado)).toEqual(106.65);
     });
     
     it("deberia hacer un descuento al precio neto de acuerdo a la cantidad", () => {
@@ -62,5 +67,12 @@ describe("Totalizador", () => {
     it("deberia hacer un descuento al precio neto de acuerdo a la cantidad > 30000", () => {
         let neto = precioNeto(30000, 2);
         expect(calcularDescuento(neto,30000)).toEqual(9000);
+    });
+
+    it("deberia calcular el precio total con el estado CA", () => {
+        let estado = "CA";
+        let cantidad = 7000;
+        let precio = 5;
+        expect(calcularTotal(cantidad, precio, estado)).toEqual(35437.5);
     });
 });

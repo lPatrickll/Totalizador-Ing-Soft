@@ -18,7 +18,7 @@ function porcentajeImpuesto(estado){
 }
 
 function porcentajeDecuento(cantidad){
-    let porcentaje;
+    let porcentaje = 0;
     if (cantidad >= 1000 && cantidad <=2999)
         porcentaje = 3;
     if (cantidad >= 3000 && cantidad <=6999)
@@ -40,8 +40,9 @@ function calcularImpuesto(neto, estado){
     return neto * porcentajeImpuesto(estado);
 }
 
-function calcularTotal(neto, estado){
-    return neto + calcularImpuesto(neto, estado);
+function calcularTotal(cantidad, precio, estado){
+    let neto = precioNeto(cantidad, precio);
+    return neto + calcularImpuesto(neto, estado) - calcularDescuento(neto, cantidad);
 }
 
 export {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto, calcularDescuento, porcentajeDecuento};
