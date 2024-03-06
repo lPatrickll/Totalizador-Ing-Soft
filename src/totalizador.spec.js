@@ -1,4 +1,4 @@
-import {precioNeto, calcularTotal, calcularDescuento, categoriaImpuesto, categoriaDescuento, calcularPeso} from "./totalizador";
+import {precioNeto, calcularTotal, calcularDescuento, categoriaImpuesto, categoriaDescuento, calcularPeso, calcularDescuentoTipoCliente} from "./totalizador";
 
 describe("Totalizador", () => {
     it("deberia calcular precio neto de 3 items a precio de 2 = 6", () => {
@@ -207,12 +207,13 @@ describe("Totalizador", () => {
     //Descuento de costo de envio por tipo de Cliente
     it("Descuento de Costo de envio por cliente Normal", () => {
         let cantidad = 1000;
-        let neto = precioNeto(cantidad, 1000);
-        expect(calcularDescuentoTipoCliente(neto, "Normal")).toEqual(0);
+        let neto = precioNeto(cantidad, 10);
+        expect(calcularDescuentoTipoCliente(neto, "normal")).toEqual(0);
     });
 
+    it("Descuento de Costo de envio por cliente Recurrente", () => {
+        let cantidad = 1000;
+        let neto = precioNeto(cantidad, 10);
+        expect(calcularDescuentoTipoCliente(neto, "recurrente")).toEqual(50);
+    });
 });
-
-function calcularDescuentoTipoCliente(neto, cliente){
-    return neto * 0;
-}

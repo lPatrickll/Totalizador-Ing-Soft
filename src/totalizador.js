@@ -73,6 +73,17 @@ function costoEnvio(peso){
     return costo;
 }
 
+function calcularDescuentoCostoEnvioCliente(cliente){
+    let descuento = 0;
+    if (cliente === "recurrente")
+        descuento = 0.5;
+    return descuento;
+}
+
+function calcularDescuentoTipoCliente(neto, cliente){
+    return (neto * calcularDescuentoCostoEnvioCliente(cliente)) / 100;
+}
+
 function calcularPeso(cantidad, peso){
     return cantidad * costoEnvio(peso);
 }
@@ -100,4 +111,4 @@ function calcularTotal(cantidad, precio, estado, categoria){
 
 export {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto, calcularDescuento, 
     porcentajeDecuento, categoriaImpuesto, porcentajeCategoriaImpuesto, categoriaDescuento, porcentajeCategoriaDescuento, 
-    calcularPeso, costoEnvio};
+    calcularPeso, costoEnvio, calcularDescuentoTipoCliente,calcularDescuentoCostoEnvioCliente};
