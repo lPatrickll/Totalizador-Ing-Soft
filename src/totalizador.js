@@ -100,5 +100,4 @@ function calcularTotal(cantidad, precio, estado, categoria){
 
 export {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto, calcularDescuento, 
     porcentajeDecuento, categoriaImpuesto, porcentajeCategoriaImpuesto, categoriaDescuento, porcentajeCategoriaDescuento, 
-    calcularPeso, costoEnvio, calcularPeso
-    };
+    calcularPeso, costoEnvio};

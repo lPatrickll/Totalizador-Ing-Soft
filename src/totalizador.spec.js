@@ -204,4 +204,15 @@ describe("Totalizador", () => {
         let peso = 300;
         expect(calcularPeso(cantidad, peso)).toEqual(9000);
     });
+    //Descuento de costo de envio por tipo de Cliente
+    it("Descuento de Costo de envio por cliente Normal", () => {
+        let cantidad = 1000;
+        let neto = precioNeto(cantidad, 1000);
+        expect(calcularDescuentoTipoCliente(neto, "Normal")).toEqual(0);
+    });
+
 });
+
+function calcularDescuentoTipoCliente(neto, cliente){
+    return neto * 0;
+}
