@@ -121,4 +121,9 @@ describe("Totalizador", () => {
         let neto = precioNeto(1000, 2);
         expect(categoriaDescuento(neto, "alimentos")).toEqual(40);
     });
+
+    it("Descuento de acuerdo a la categoria bebidas alcoholicas + 0%", () => {
+        let neto = precioNeto(1000, 2);
+        expect(categoriaDescuento(neto, "bebidas")).toEqual(0);
+    });
 });
