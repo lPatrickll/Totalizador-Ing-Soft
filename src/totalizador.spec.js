@@ -198,4 +198,10 @@ describe("Totalizador", () => {
         let peso = 150;
         expect(calcularPeso(cantidad, peso)).toEqual(8000);
     });
+
+    it("Peso volumetrico de acuerdo al costo de mayor a 201", () => {
+        let cantidad = 1000;
+        let peso = 300;
+        expect(calcularPeso(cantidad, peso)).toEqual(9000);
+    });
 });
