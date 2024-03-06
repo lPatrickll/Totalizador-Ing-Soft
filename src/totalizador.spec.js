@@ -222,4 +222,10 @@ describe("Totalizador", () => {
         let neto = precioNeto(cantidad, 10);
         expect(calcularDescuentoTipoCliente(neto, "antiguo")).toEqual(100);
     });
+
+    it("Descuento de Costo de envio por cliente Especial", () => {
+        let cantidad = 1000;
+        let neto = precioNeto(cantidad, 10);
+        expect(calcularDescuentoTipoCliente(neto, "especial")).toEqual(150);
+    });
 });

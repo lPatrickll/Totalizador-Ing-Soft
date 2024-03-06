@@ -79,6 +79,8 @@ function calcularDescuentoCostoEnvioCliente(cliente){
         descuento = 0.5;
     if (cliente === "antiguo")
         descuento = 1;
+    if (cliente === "especial")
+        descuento = 1.5;
     return descuento;
 }
 
