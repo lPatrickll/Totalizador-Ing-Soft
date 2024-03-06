@@ -56,6 +56,10 @@ function porcentajeCategoriaDescuento(categoria){
     return porcentaje;
 }
 
+function calcularPeso(cantidad, peso){
+    return 0;
+}
+
 function categoriaImpuesto(neto, categoria){
     return (neto * porcentajeCategoriaImpuesto(categoria)) / 100;
 }
@@ -77,4 +81,7 @@ function calcularTotal(cantidad, precio, estado, categoria){
     return neto + calcularImpuesto(neto, estado) - calcularDescuento(neto, cantidad) + categoriaImpuesto(neto, categoria) - categoriaDescuento(neto, categoria);
 }
 
-export {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto, calcularDescuento, porcentajeDecuento, categoriaImpuesto, porcentajeCategoriaImpuesto, categoriaDescuento, porcentajeCategoriaDescuento};
+export {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto, calcularDescuento, 
+    porcentajeDecuento, categoriaImpuesto, porcentajeCategoriaImpuesto, categoriaDescuento, porcentajeCategoriaDescuento, 
+    calcularPeso
+    };

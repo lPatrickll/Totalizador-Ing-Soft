@@ -1,4 +1,4 @@
-import {precioNeto, calcularTotal, calcularDescuento, categoriaImpuesto, categoriaDescuento} from "./totalizador";
+import {precioNeto, calcularTotal, calcularDescuento, categoriaImpuesto, categoriaDescuento, calcularPeso} from "./totalizador";
 
 describe("Totalizador", () => {
     it("deberia calcular precio neto de 3 items a precio de 2 = 6", () => {
@@ -161,5 +161,11 @@ describe("Totalizador", () => {
         let cantidad = 1000;
         let estado = "CA";
         expect(calcularTotal(cantidad, precio, estado, categoria)).toEqual(2165);
+    });
+
+    it("Peso volumetrico de acuerdo al costo de 0 a 10", () => {
+        let cantidad = 1000;
+        let peso = 4;
+        expect(calcularPeso(cantidad, peso)).toEqual(0);
     });
 });
