@@ -84,6 +84,15 @@ function calcularDescuentoCostoEnvioCliente(cliente){
     return descuento;
 }
 
+function calcularOtrosBeneficios(cliente, neto, categoria){
+    let beneficio = 0;
+    if(cliente === "recurrente" && neto >= 3000 && categoria === "alimentos")
+        beneficio = 100;
+    if(cliente === "especial" && neto >= 7000 && categoria === "electronicos")
+        beneficio = 200;
+    return beneficio;
+}
+
 function calcularDescuentoTipoCliente(neto, cliente){
     return (neto * calcularDescuentoCostoEnvioCliente(cliente)) / 100;
 }
@@ -115,4 +124,4 @@ function calcularTotal(cantidad, precio, estado, categoria){
 
 export {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto, calcularDescuento, 
     porcentajeDecuento, categoriaImpuesto, porcentajeCategoriaImpuesto, categoriaDescuento, porcentajeCategoriaDescuento, 
-    calcularPeso, costoEnvio, calcularDescuentoTipoCliente,calcularDescuentoCostoEnvioCliente};
+    calcularPeso, costoEnvio, calcularDescuentoTipoCliente,calcularDescuentoCostoEnvioCliente, calcularOtrosBeneficios};
