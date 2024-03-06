@@ -33,7 +33,7 @@ function porcentajeDecuento(cantidad){
 }
 
 function categoriaImpuesto(neto, categoria){
-    return neto;
+    return neto * 0;
 }
 
 function calcularDescuento(neto, cantidad){

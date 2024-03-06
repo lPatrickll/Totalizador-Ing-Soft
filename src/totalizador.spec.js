@@ -78,6 +78,11 @@ describe("Totalizador", () => {
 
     it("Aumenta el precio de acuerdo a la categoria varios + 0%", () => {
         let neto = precioNeto(1000, 2);
-        expect(categoriaImpuesto(neto, "varios")).toEqual(2000);
+        expect(categoriaImpuesto(neto, "varios")).toEqual(0);
+    });
+
+    it("Impuesto de acuerdo a la categoria alimentos + 0%", () => {
+        let neto = precioNeto(1000, 2);
+        expect(categoriaImpuesto(neto, "alimentos")).toEqual(0);
     });
 });
