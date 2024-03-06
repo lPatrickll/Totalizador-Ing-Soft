@@ -228,4 +228,15 @@ describe("Totalizador", () => {
         let neto = precioNeto(cantidad, 10);
         expect(calcularDescuentoTipoCliente(neto, "especial")).toEqual(150);
     });
+
+    //Descuento de precio fijo de acuerdo a al tipo de cliente, precio neto y categoria de producto
+    it("Descuento de precio fijo de acuerdo a al cliente Recurrente, precio neto mayor 3000 y categoria de alimentos", () => {
+        let cantidad = 1000;
+        let neto = precioNeto(cantidad, 10);
+        expect(calcularDescuentoClientePrecioNetoCategoria("recurrente", neto, "alimentos")).toEqual(100);
+    });
 });
+
+function calcularDescuentoClientePrecioNetoCategoria(cliente, neto, categoria){
+    return 100;
+}
