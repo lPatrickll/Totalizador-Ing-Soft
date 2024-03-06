@@ -49,8 +49,8 @@ function porcentajeCategoriaDescuento(categoria){
     let porcentaje = 0;
     if (categoria === "alimentos")
         porcentaje = 2;
-    if (categoria === "bebidas")
-        porcentaje = 0;
+    if (categoria === "material")
+        porcentaje = 1.5;
     return porcentaje;
 }
 
