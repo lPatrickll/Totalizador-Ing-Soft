@@ -1,4 +1,4 @@
-import {precioNeto, calcularTotal, calcularDescuento} from "./totalizador";
+import {precioNeto, calcularTotal, calcularDescuento, categoriaImpuesto} from "./totalizador";
 
 describe("Totalizador", () => {
     it("deberia calcular precio neto de 3 items a precio de 2 = 6", () => {
@@ -74,5 +74,10 @@ describe("Totalizador", () => {
         let cantidad = 7000;
         let precio = 5;
         expect(calcularTotal(cantidad, precio, estado)).toEqual(35437.5);
+    });
+
+    it("Aumenta el precio de acuerdo a la categoria varios + 0%", () => {
+        let neto = precioNeto(1000, 2);
+        expect(categoriaImpuesto(neto, "varios")).toEqual(2000);
     });
 });
