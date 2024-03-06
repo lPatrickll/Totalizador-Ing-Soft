@@ -62,4 +62,4 @@ function calcularTotal(cantidad, precio, estado){
     return neto + calcularImpuesto(neto, estado) - calcularDescuento(neto, cantidad);
 }
 
-export {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto, calcularDescuento, porcentajeDecuento, categoriaImpuesto};
+export {precioNeto, calcularTotal, calcularImpuesto, porcentajeImpuesto, calcularDescuento, porcentajeDecuento, categoriaImpuesto, porcentajeCategoriaImpuesto};
