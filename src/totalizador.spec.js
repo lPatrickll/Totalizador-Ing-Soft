@@ -1,4 +1,4 @@
-import {precioNeto, calcularTotal, calcularDescuento, categoriaImpuesto} from "./totalizador";
+import {precioNeto, calcularTotal, calcularDescuento, categoriaImpuesto, categoriaDescuento} from "./totalizador";
 
 describe("Totalizador", () => {
     it("deberia calcular precio neto de 3 items a precio de 2 = 6", () => {
@@ -116,8 +116,9 @@ describe("Totalizador", () => {
         let neto = precioNeto(1000, 2);
         expect(categoriaDescuento(neto, "varios")).toEqual(0);
     });
-});
 
-function categoriaDescuento(neto,categoria){
-    return neto * 0;
-}
+    it("Descuento de acuerdo a la categoria alimentos + 2%", () => {
+        let neto = precioNeto(1000, 2);
+        expect(categoriaDescuento(neto, "alimentos")).toEqual(40);
+    });
+});
