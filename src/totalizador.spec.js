@@ -131,4 +131,9 @@ describe("Totalizador", () => {
         let neto = precioNeto(1000, 2);
         expect(categoriaDescuento(neto, "material")).toEqual(30);
     });
+
+    it("Descuento de acuerdo a la categoria muebles + 0%", () => {
+        let neto = precioNeto(1000, 2);
+        expect(categoriaDescuento(neto, "muebles")).toEqual(0);
+    });
 });
