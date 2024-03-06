@@ -37,6 +37,8 @@ function categoriaImpuesto(neto, categoria){
         return (neto * 7) / 100;
     if (categoria === "muebles")
         return (neto * 3) / 100;
+    if (categoria === "electronicos")
+        return (neto * 4) / 100;
     return 0;
 }
 

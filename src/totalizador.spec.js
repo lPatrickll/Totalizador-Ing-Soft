@@ -100,4 +100,9 @@ describe("Totalizador", () => {
         let neto = precioNeto(1000, 2);
         expect(categoriaImpuesto(neto, "muebles")).toEqual(60);
     });
+
+    it("Impuesto de acuerdo a la categoria electronicos + 4%", () => {
+        let neto = precioNeto(1000, 2);
+        expect(categoriaImpuesto(neto, "electronicos")).toEqual(80);
+    });
 });
