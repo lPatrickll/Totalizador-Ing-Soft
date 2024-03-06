@@ -35,6 +35,8 @@ function porcentajeDecuento(cantidad){
 function categoriaImpuesto(neto, categoria){
     if (categoria === "bebidas")
         return (neto * 7) / 100;
+    if (categoria === "muebles")
+        return (neto * 3) / 100;
     return 0;
 }
 
