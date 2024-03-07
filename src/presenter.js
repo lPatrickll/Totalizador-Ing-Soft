@@ -29,7 +29,7 @@ form.addEventListener("submit", (event) => {
     "<p> <b>Peso volumetrico ($</b>" + costoEnvio(pesoNumber) + "<b>): </b>" + calcularPeso(cantItemsNumber, pesoNumber) + "$ </p>" +
     "<p> <b>Descuento para el cliente (</b>"+ clienteValue +"<b>) con (</b>"+ calcularDescuentoCostoEnvioCliente(clienteValue) +"<b>%): </b>" + calcularDescuentoTipoCliente(precioNeto(cantItemsNumber, precioNumber), clienteValue) + "$</p>" +
     "<p> <b>Descuentos especiales: </b>"+ calcularOtrosBeneficios(clienteValue, precioNeto(cantItemsNumber, precioNumber), categoriaValue) + "$</p>" +
-    "<p class='precio-total'>" + "Precio Total: " + calcularTotal(cantItemsNumber, precioNumber, estadoValue, categoriaValue, clienteValue, pesoNumber) + "$ </p>" 
+    "<p class='precio-total'>" + "Precio Total: " + calcularTotal(cantItemsNumber, precioNumber, estadoValue, categoriaValue, clienteValue, pesoNumber).toFixed(2) + "$ </p>" 
   );
 
 });

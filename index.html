@@ -11,10 +11,10 @@
   <div id="form-container">
     <form id="totalizador-form">
       <label for="cantidad-items"><b>Cantidad de items:</b></label>
-      <input type="number" id="cantidad-items" />
+      <input type="number" id="cantidad-items" min="1" required/>
       
       <label for="precio">Precio:</label>
-      <input type="number" id="precio" />
+      <input type="number" id="precio" min="1" required/>
       
       <label for="codigoEstado"><b>Codigo de Estado:</b></label>
       <select name="impuestoEstado" id="codigoEstado">
@@ -37,7 +37,7 @@
       </select>
       
       <label for="peso"><b>Peso volumetrico:</b></label>
-      <input type="peso" id="peso" />
+      <input type="number" id="peso" min="1" required/>
       
       <label for="cliente"><b>Cliente:</b></label>
       <select name="cliente" id="cliente">
