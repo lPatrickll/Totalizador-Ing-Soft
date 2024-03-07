@@ -1,14 +1,22 @@
-<html>
-  <body>
-    <h1>Totalizador</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Totalizador</title>
+  <link rel="stylesheet" href="./estilos/estiloIndex.css">
+</head>
+<body>
+  <h1>Totalizador</h1>
+  <div id="form-container">
     <form id="totalizador-form">
-      <label for="cantidad-items">Cantidad de items:</label>
+      <label for="cantidad-items"><b>Cantidad de items:</b></label>
       <input type="number" id="cantidad-items" />
-      <br>
+      
       <label for="precio">Precio:</label>
       <input type="number" id="precio" />
-      <br>
-      <label for="codigoEstado">Codigo de Estado: </label>
+      
+      <label for="codigoEstado"><b>Codigo de Estado:</b></label>
       <select name="impuestoEstado" id="codigoEstado">
         <option value="CA">CA</option>
         <option value="AL">AL</option>
@@ -16,8 +24,8 @@
         <option value="NV">NV</option>
         <option value="UT">UT</option>
       </select>
-      <br>
-      <label for="categoria">Categoria: </label>
+  
+      <label for="categoria"><b>Categoria:</b></label>
       <select name="categoria" id="categoria">
         <option value="varios">Varios</option>
         <option value="alimentos">Alimentos</option>
@@ -27,21 +35,24 @@
         <option value="electronicos">Electrónicos</option>
         <option value="vestimenta">Vestimenta</option>
       </select>
-      <br>
-      <label for="peso">Peso volumetrico:</label>
+      
+      <label for="peso"><b>Peso volumetrico:</b></label>
       <input type="peso" id="peso" />
-      <br>
-      <label for="cliente">Cliente: </label>
+      
+      <label for="cliente"><b>Cliente:</b></label>
       <select name="cliente" id="cliente">
         <option value="normal">Normal</option>
         <option value="recurrente">Recurrente</option>
         <option value="antiguo">Antiguo Recurrente</option>
         <option value="especial">Especial</option>
       </select>
-      <input type="submit" value="Totalizador" id="totalizador-button" />
+      <input type="submit" value="Totalizar" id="totalizador-button" />
     </form>
-    <div id="resultado-div"></div>
+  </div>
+    <div id="resultado-container">
+      <div id="resultado-div"></div>
+    </div>
 
     <script type="module" src="./src/presenter.js"></script>
-  </body>
+</body>
 </html>

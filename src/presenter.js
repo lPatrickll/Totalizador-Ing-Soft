@@ -21,15 +21,15 @@ form.addEventListener("submit", (event) => {
   const clienteValue = cliente.value;
 
   div.innerHTML = (
-    "<p>" + "Precio neto (" + cantItemsNumber + "*$" + precioNumber + "): $" + precioNeto(cantItemsNumber, precioNumber) + "</p>" +
-    "<p> Descuento (" + porcentajeDecuento(cantItemsNumber) + "%): " + calcularDescuento(precioNeto(cantItemsNumber, precioNumber), cantItemsNumber) + "</p>" +
-    "<p>"+ "Impuesto para " + estadoValue + "(%" + porcentajeImpuesto(estadoValue) * 100 + "): $" + calcularImpuesto(precioNeto(cantItemsNumber, precioNumber), estadoValue) + "</p>"+
-    "<p> Impuestos por categoria (" + porcentajeCategoriaImpuesto(categoriaValue) + "%): " + categoriaImpuesto(precioNeto(cantItemsNumber, precioNumber), categoriaValue) + "$ </p>" +
-    "<p> Descuentos por categoria (" + porcentajeCategoriaDescuento(categoriaValue) + "%): " + categoriaDescuento(precioNeto(cantItemsNumber, precioNumber), categoriaValue) + "$ </p>" +
-    "<p> Peso volumetrico ($" + costoEnvio(pesoNumber) + "): " + calcularPeso(cantItemsNumber, pesoNumber) + "$ </p>" +
-    "<p> Descuento para el cliente ("+ clienteValue +") con ("+ calcularDescuentoCostoEnvioCliente(clienteValue) +"%): " + calcularDescuentoTipoCliente(precioNeto(cantItemsNumber, precioNumber), clienteValue) + "$</p>" +
-    "<p> Descuentos especiales: "+ calcularOtrosBeneficios(clienteValue, precioNeto(cantItemsNumber, precioNumber), categoriaValue) + "$</p>" +
-    "<p>" + "Precio Total: " + calcularTotal(cantItemsNumber, precioNumber, estadoValue, categoriaValue, clienteValue, pesoNumber) + "$ </p>" 
+    "<p>" + "<b>Precio neto (</b>" + cantItemsNumber + "*$" + precioNumber + "<b>):</b> $" + precioNeto(cantItemsNumber, precioNumber) + "</p>" +
+    "<p> <b>Descuento (</b>" + porcentajeDecuento(cantItemsNumber) + "<b>%):</b> " + calcularDescuento(precioNeto(cantItemsNumber, precioNumber), cantItemsNumber) + "</p>" +
+    "<p> <b>Impuesto para </b>" + estadoValue + "<b>(%</b>" + porcentajeImpuesto(estadoValue) * 100 + "<b>):</b> $" + calcularImpuesto(precioNeto(cantItemsNumber, precioNumber), estadoValue) + "</p>"+
+    "<p> <b>Impuestos por categoria (</b>" + porcentajeCategoriaImpuesto(categoriaValue) + "<b>%):</b> " + categoriaImpuesto(precioNeto(cantItemsNumber, precioNumber), categoriaValue) + "$ </p>" +
+    "<p> <b>Descuentos por categoria (</b>" + porcentajeCategoriaDescuento(categoriaValue) + "<b>%): </b>" + categoriaDescuento(precioNeto(cantItemsNumber, precioNumber), categoriaValue) + "$ </p>" +
+    "<p> <b>Peso volumetrico ($</b>" + costoEnvio(pesoNumber) + "<b>): </b>" + calcularPeso(cantItemsNumber, pesoNumber) + "$ </p>" +
+    "<p> <b>Descuento para el cliente (</b>"+ clienteValue +"<b>) con (</b>"+ calcularDescuentoCostoEnvioCliente(clienteValue) +"<b>%): </b>" + calcularDescuentoTipoCliente(precioNeto(cantItemsNumber, precioNumber), clienteValue) + "$</p>" +
+    "<p> <b>Descuentos especiales: </b>"+ calcularOtrosBeneficios(clienteValue, precioNeto(cantItemsNumber, precioNumber), categoriaValue) + "$</p>" +
+    "<p class='precio-total'>" + "Precio Total: " + calcularTotal(cantItemsNumber, precioNumber, estadoValue, categoriaValue, clienteValue, pesoNumber) + "$ </p>" 
   );
 
 });
